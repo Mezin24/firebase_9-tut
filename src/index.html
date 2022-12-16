@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap w/ Vite</title>
+  </head>
+  <body>
+    <div class="container py-4 px-3 mx-auto">
+      <h3 class="text-center mb-3 text-primary">Add New Book</h3>
+
+      <!-- Add Form -->
+      <form class="border p-3 rounded" id="add-form">
+        <div class="mb-3">
+          <label class="form-label">Book Title</label>
+          <input type="text" class="form-control" name="title" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Author</label>
+          <input type="text" class="form-control" name="author" />
+        </div>
+        <div class="d-flex flex-col">
+          <button type="submit" class="btn btn-primary w-100">
+            Add New Book
+          </button>
+        </div>
+      </form>
+
+      <!-- Delete Form -->
+      <h3 class="text-center mb-3 mt-5 text-danger">Delete Book</h3>
+      <form class="border p-3 rounded" id="delete-form">
+        <div class="mb-3">
+          <label class="form-label">Delete Book ID</label>
+          <input type="text" class="form-control" name="id" />
+        </div>
+        <div class="d-flex flex-col">
+          <button type="submit" class="btn btn-danger w-100">
+            Delete Book
+          </button>
+        </div>
+      </form>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
