@@ -1,5 +1,4 @@
 import '../scss/styles.scss';
-import * as bootstrap from 'bootstrap';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './firebase.config';
 import {
@@ -9,7 +8,8 @@ import {
   doc,
   deleteDoc,
   addDoc,
-} from 'firebase/firestore/lite';
+  onSnapshot,
+} from 'firebase/firestore';
 import { alertSuccess, alertDanger } from './alert';
 
 const addForm = document.getElementById('add-form');
@@ -28,6 +28,12 @@ async function getBooks() {
   }));
   return booksList;
 }
+
+onSnapshot(curRef, (snapshot) => {
+  const books = [];
+  snapshot.docs.forEach((doc) => books.push({ ...doc }));
+  console.log(books);
+});
 
 addForm.addEventListener('submit', async (e) => {
   e.preventDefault();
